@@ -2,22 +2,30 @@
 #define BrokerHeader_h
 #include <stddef.h>
 #include "EnumDummy.hpp"
+#include "IEventObserver.hpp"
+#include "EvQueueDummy.hpp"
+#include "Dispatcher.hpp"
 
 class Broker
 {
 private:
     //For Singleton Desing Pattern  
-    Broker(){}; // Private so that it can  not be called
+    Broker(); // Private so that it can  not be called
 	Broker(Broker const&){};             // copy constructor is private
 	Broker& operator=(Broker const&){};  // assignment operator is private
 	static Broker* pointer_Instance ;
-    ~Broker(){};
-    
+    ~Broker()=default;
+    std::thread broker_thread;
+    EventQueue eventqueue;
+    Dispatcher dispatcher;
 public:
     //For Singleton Desing Pattern
     static Broker* getInstance();
-
-
+    void subscribe(EventTyp evType, IEventObserver& observer);
+    void unsubscribe(EventTyp evType, IEventObserver& observer);
+    void enqueue_event(Event event);
+    void broker_watch_queue_threaded();
+    void join_broker();
 };
 
 

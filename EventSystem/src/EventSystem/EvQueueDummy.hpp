@@ -6,7 +6,7 @@ class EventQueue
 {
 private:
     std::queue<Event> queue;
-
+    
 public:
     EventQueue(/* args */);
     ~EventQueue();
@@ -14,8 +14,5 @@ public:
     void enqueue_Event(Event input_event);
 
 };
-
-
-
 
 #endif

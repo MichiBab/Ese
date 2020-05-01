@@ -12,6 +12,9 @@ private:
 public:
     Dispatcher(/* args */);
     ~Dispatcher();
+    void add_subscriber(EventTyp evEnum, IEventObserver& observer);
+    void remove_subscriber(EventTyp evEnum, IEventObserver& observer);
+    void dispatch_event(Event event);
 };
 
 
