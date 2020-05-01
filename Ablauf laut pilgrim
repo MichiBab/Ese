@@ -1,0 +1,23 @@
+Requirements Engeneering: 
+    Systemkontext,
+    Anforderungen, Dokumentationslayout,
+    Funktionsmodellierung mit Use Cases,
+    Domänenklassen?
+Analyse: 
+    Analyseklassenmodell = Interne sicht auf das system,
+    In erster Linie für die Entwickler um zu verstehen,
+    wie das System aufgebaut sein soll.
+    Skizziert wie die Funktionalität umgesetzt werden
+    soll.
+    State Machines, wie läuft das Programm ab?
+Aufwandsabschätzung;
+Architektur:
+    Architekturkomponenten und deren Beziehung, Schnittstellen.
+    ==Komponentendiagram
+    Sequenzdiagramme
+    Architekturmuster zb client server, drei schichten
+Entwurf:
+    Software Entwurf, Design Patterns zb Object Pattern, Observer 
+    Pattern, Adapter Pattern
+Test:
+    Black box, white box, agile verfahren, design for testing
