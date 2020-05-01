@@ -1,6 +1,6 @@
 #include "EventHandlerMotorDummy.hpp"
 #include "Broker.hpp"
-#include "EnumDummy.hpp"
+#include "EventTyp.hpp"
 #include <map>
 #include "IEventObserver.hpp"
 #include <vector>
@@ -8,26 +8,30 @@
 
 int main(int argc, char const *argv[])
 {
+    //GET BROKER INSTANCE
     Broker* broker = Broker::getInstance();
 
+    //ERSTELLE EVENT HANDLER
     EventHandlerMotorDummy* handler = new EventHandlerMotorDummy();
     EventHandlerMotorDummy* handler2 = new EventHandlerMotorDummy();
     
+    //STARTE EVENT HANDLER
     std::thread t1(&EventHandlerMotorDummy::run,handler);
     std::thread t2(&EventHandlerMotorDummy::run,handler);
 
-    broker->subscribe(Event1,*handler);
-    broker->subscribe(Event1,*handler2);
-    broker->subscribe(Event2,*handler);
     
+    broker->subscribe(LICHTSCHRANKE_EINLAUF1_UNTERBROCHEN,*handler);
+    broker->subscribe(LICHTSCHRANKE_AUSLAUF_FREI,*handler2);
+    
+    //Event Creator: Schnittstelle einer Komponente zum Broker.
     EventCreator motor_event_creator;
 
-    motor_event_creator.parseEvent(Event1);
-
-    for(int i = 0; i < 1000000000;i++){
-        
+    //SEND EVENTS WITH EVENT CREATOR EXAMPLE
+    motor_event_creator.parseEvent(LICHTSCHRANKE_EINLAUF1_UNTERBROCHEN);
+    for(int i = 0; i < 5;i++){
+        motor_event_creator.parseEvent(LICHTSCHRANKE_AUSLAUF_FREI);
     }
-    motor_event_creator.parseEvent(Event2);
+    motor_event_creator.parseEvent(LICHTSCHRANKE_EINLAUF1_UNTERBROCHEN);
 
 
 

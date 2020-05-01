@@ -1,4 +1,6 @@
 bin/EventSystem/EventHandler.o: src/EventSystem/EventHandler.cpp \
  src/EventSystem/EventHandler.hpp src/EventSystem/IEventObserver.hpp \
- src/EventSystem/EventDummy.hpp src/EventSystem/EnumDummy.hpp \
- src/EventSystem/EvQueueDummy.hpp
+ src/EventSystem/Event.hpp src/EventSystem/EventTyp.hpp \
+ src/EventSystem/../sortierung/Werkstueck.hpp \
+ src/EventSystem/../sortierung/Werkstuecktyp.hpp \
+ src/EventSystem/EventQueue.hpp

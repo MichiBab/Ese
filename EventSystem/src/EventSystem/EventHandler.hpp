@@ -1,7 +1,14 @@
+/*
+ * EventHandler.hpp
+ *
+ *  Created on: May 1, 2020
+ *      Author: Michael Babic
+ */
+
 #if !defined(EventHandler_h)
 #define EventHandler_h
 #include "IEventObserver.hpp"
-#include "EvQueueDummy.hpp"
+#include "EventQueue.hpp"
 #include <thread>
 
 class EventHandler: public IEventObserver

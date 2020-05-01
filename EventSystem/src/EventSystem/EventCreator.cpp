@@ -1,3 +1,9 @@
+/*
+ * EventCreator.cpp
+ *
+ *  Created on: May 1, 2020
+ *      Author: Michael Babic
+ */
 #include "EventCreator.hpp"
 
 EventCreator::EventCreator():broker(Broker::getInstance()){

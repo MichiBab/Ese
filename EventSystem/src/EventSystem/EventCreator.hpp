@@ -1,3 +1,9 @@
+/*
+ * EventCreator.hpp
+ *
+ *  Created on: May 1, 2020
+ *      Author: Michael Babic
+ */
 #if !defined(EventCreator_h)
 #define EventCreator_h
 #include "Broker.hpp"

@@ -1,7 +1,13 @@
+/*
+ * Dispatcher.hpp
+ *
+ *  Created on: May 1, 2020
+ *      Author: Michael Babic
+ */
 #if !defined(Dispatcher_h)
 #define Dispatcher_h
 #include <map>
-#include "EnumDummy.hpp"
+#include "EventTyp.hpp"
 #include "IEventObserver.hpp"
 #include <vector>
 class Dispatcher

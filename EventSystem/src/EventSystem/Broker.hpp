@@ -1,10 +1,18 @@
+/*
+ * Broker.hpp
+ *
+ *  Created on: May 1, 2020
+ *      Author: Michael Babic
+ */
+
 #if !defined(BrokerHeader_h)
 #define BrokerHeader_h
 #include <stddef.h>
-#include "EnumDummy.hpp"
+#include "EventTyp.hpp"
 #include "IEventObserver.hpp"
-#include "EvQueueDummy.hpp"
+#include "EventQueue.hpp"
 #include "Dispatcher.hpp"
+#include <thread>
 
 class Broker
 {
@@ -27,9 +35,5 @@ public:
     void broker_watch_queue_threaded();
     void join_broker();
 };
-
-
-
-
 
 #endif // MACRO
